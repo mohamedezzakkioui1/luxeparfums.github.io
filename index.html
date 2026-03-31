@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUXE PARFUMS</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background: #f9f9f9;
+            text-align: center;
+        }
+        header {
+            padding: 25px;
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .product {
+            width: 90%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        input, select, button {
+            width: 90%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: black;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>LUXE PARFUMS</h1>
+        <p>أرقى العطور الفاخرة</p>
+    </header>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/300x350" width="70%" />
+        <h2>اسم العطر</h2>
+        <p>وصف قصير للعطر</p>
+    </div>
+
+    <div class="order-box">
+        <h3>اطلب الآن</h3>
+
+        <input id="name" placeholder="الإسم الكامل" />
+        <input id="phone" placeholder="رقم الهاتف" />
+        <select id="product">
+            <option value="عطر فاخر 50ml">عطر فاخر 50ml</option>
+            <option value="عطر فاخر 100ml">عطر فاخر 100ml</option>
+        </select>
+
+        <button onclick="sendOrder()">إرسال الطلب عبر واتساب</button>
+    </div>
+
+    <script>
+        function sendOrder() {
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let product = document.getElementById('product').value;
+
+            let message =
+                `السلام عليكم، أريد طلب:\n- المنتج: ${product}\n- الاسم: ${name}\n- الهاتف: ${phone}`;
+
+            window.location.href =
+                "https://wa.me/212725607282?text=" + encodeURIComponent(message);
+        }
+    </script>
+</body>
+</html>
