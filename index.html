@@ -5,148 +5,217 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUXE PARFUMS</title>
 
+<!-- خطوط فاخرة -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
 <style>
+
+/* ===== GENERAL ===== */
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #000000, #1a1a1a);
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #000000, #0A0A0A, #111);
     color: white;
-    text-align: center;
+    overflow-x: hidden;
 }
 
-/* ------- HEADER ------- */
+/* ===== GLOBAL GLOW ===== */
+.glow {
+    text-shadow: 0 0 18px rgba(255,255,255,0.25);
+}
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
 h1 {
-    margin-top: 40px;
-    font-size: 32px;
-    letter-spacing: 2px;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 35px rgba(255,255,255,0.45);
 }
 
 .sub {
-    opacity: 0.8;
-    margin-bottom: 40px;
+    opacity: 0.85;
+    font-size: 16px;
+    margin-top: 5px;
+    letter-spacing: 1px;
 }
 
-/* ------- GLASS CARD ------- */
-.product-card {
-    width: 85%;
-    max-width: 350px;
-    margin: 20px auto;
+/* ===== PRODUCTS GRID ===== */
+.products {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
     padding: 20px;
-    border-radius: 18px;
-
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    transition: 0.3s;
+    margin: 0 auto;
+    max-width: 420px;
 }
 
-.product-card:active {
-    transform: scale(0.97);
-    background: rgba(255,255,255,0.17);
+.product-card {
+    background: rgba(255,255,255,0.08);
+    padding: 22px;
+    border-radius: 20px;
+    text-align: center;
+
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 35px rgba(255,255,255,0.12);
+
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 45px rgba(255,255,255,0.18);
 }
 
 .product-card img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.55);
 }
 
-/* ------- FORM ------- */
+.product-card h3 {
+    margin-top: 15px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/* ===== FORM ===== */
 form {
-    width: 85%;
-    max-width: 400px;
-    margin: 40px auto;
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    border-radius: 18px;
-    backdrop-filter: blur(10px);
+    margin: 55px auto;
+    width: 90%;
+    max-width: 450px;
+
+    background: rgba(255,255,255,0.10);
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 40px rgba(255,255,255,0.15);
+}
+
+form h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 input, select {
     width: 95%;
-    padding: 12px;
-    margin: 10px 0;
+    padding: 15px;
+    margin: 12px 0;
     border: none;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.15);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.18);
     color: white;
+    font-size: 16px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
 }
 
 input::placeholder {
-    color: #eee;
+    color: #ddd;
 }
 
-/* ------- BUTTON ------- */
+/* ===== BUTTON ===== */
 button {
     width: 100%;
     padding: 14px;
     background: #25d366;
     border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    margin-top: 10px;
-    transition: 0.2s;
+    border-radius: 14px;
+    font-size: 19px;
+    font-weight: 700;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 12px;
+
+    box-shadow: 0 0 25px rgba(37,211,102,0.5);
+    transition: 0.2s ease;
+}
+
+button img {
+    width: 26px;
+}
+
+button:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 35px rgba(37,211,102,0.7);
 }
 
 button:active {
-    background: #1da851;
     transform: scale(0.97);
 }
 
-/* ------- INSTAGRAM ICON ------- */
-.instagram {
-    margin-top: 30px;
-}
-
+/* ===== INSTAGRAM ===== */
 .instagram img {
-    width: 50px;
-    transition: 0.2s;
-}
-
-.instagram img:active {
-    transform: scale(0.85);
-}
-
-/* ------- FOOTER ------- */
-footer {
+    width: 58px;
     margin-top: 40px;
-    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.instagram img:hover {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    opacity: 0.5;
     font-size: 13px;
+    margin: 45px 0 25px;
 }
 </style>
 
 </head>
 <body>
 
-<h1>LUXE PARFUMS ✨</h1>
-<p class="sub">عطور فاخرة – جودة عالية – توصيل لجميع المدن المغربية 🇲🇦</p>
+<header>
+    <h1 class="glow">LUXE PARFUMS ✨</h1>
+    <p class="sub">عطور فاخرة – جودة أعلى – لمسة ملكية في كل قارورة</p>
+</header>
 
 
-<!-- ------- PRODUCTS ------- -->
+<!-- ===== PRODUCTS ===== -->
+<div class="products">
 
-<div class="product-card">
-    <img src="https://via.placeholder.com/350x450" alt="product1">
-    <h3>Product 1</h3>
+    <div class="product-card glow">
+        <img src="https://via.placeholder.com/350x450" alt="product1">
+        <h3>Product 1</h3>
+    </div>
+
+    <div class="product-card glow">
+        <img src="https://via.placeholder.com/350x450" alt="product2">
+        <h3>Product 2</h3>
+    </div>
+
+    <div class="product-card glow">
+        <img src="https://via.placeholder.com/350x450" alt="product3">
+        <h3>Product 3</h3>
+    </div>
+
 </div>
 
-<div class="product-card">
-    <img src="https://via.placeholder.com/350x450" alt="product2">
-    <h3>Product 2</h3>
-</div>
 
-<div class="product-card">
-    <img src="https://via.placeholder.com/350x450" alt="product3">
-    <h3>Product 3</h3>
-</div>
-
-
-<!-- ------- ORDER FORM ------- -->
-
+<!-- ===== ORDER FORM ===== -->
 <form id="orderForm">
+    <h2 class="glow">طلبك جاهز 🤍</h2>
+
     <input type="text" id="name" placeholder="الاسم الكامل" required>
     <input type="text" id="phone" placeholder="رقم الهاتف" required>
-    <input type="text" id="address" placeholder="العنوان" required>
+    <input type="text" id="address" placeholder="العنوان الكامل" required>
 
     <select id="product">
         <option value="Product 1">Product 1</option>
@@ -154,24 +223,26 @@ footer {
         <option value="Product 3">Product 3</option>
     </select>
 
-    <button type="button" onclick="sendToWhatsApp()">أطلب الآن عبر واتساب</button>
+    <button type="button" onclick="sendToWhatsApp()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        أطلب الآن
+    </button>
 </form>
 
 
-<!-- ------- INSTAGRAM ------- -->
+<!-- ===== INSTAGRAM ===== -->
 <div class="instagram">
-    <a href="https://www.instagram.com/luxe__parfumss?igsh=MWh3Y2Y3dngydDlydw%3D%3D&utm_source=qr" target="_blank">
+    <a href="https://www.instagram.com/luxe__parfumss" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
     </a>
 </div>
-
 
 <footer>
     LUXE PARFUMS © 2024 – All Rights Reserved
 </footer>
 
 
-<!-- ------- WHATSAPP SCRIPT ------- -->
+<!-- ===== WHATSAPP SCRIPT ===== -->
 <script>
 function sendToWhatsApp() {
     let name = document.getElementById("name").value;
