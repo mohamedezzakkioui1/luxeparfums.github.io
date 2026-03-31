@@ -1,76 +1,194 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUXE PARFUMS</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Tajawal", sans-serif;
-            background: linear-gradient(135deg, #111, #222);
-            color: white;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUXE PARFUMS</title>
 
-        header {
-            padding: 60px 20px;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    color: white;
+    text-align: center;
+}
 
-        h1 {
-            font-size: 36px;
-            letter-spacing: 3px;
-        }
+/* ------- HEADER ------- */
+h1 {
+    margin-top: 40px;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
 
-        p {
-            font-size: 18px;
-            opacity: .8;
-        }
+.sub {
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 14px 28px;
-            background: #25D366;
-            color: white;
-            font-size: 20px;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-        }
+/* ------- GLASS CARD ------- */
+.product-card {
+    width: 85%;
+    max-width: 350px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 18px;
 
-        .container {
-            padding: 30px 20px;
-        }
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-        footer {
-            margin-top: 40px;
-            font-size: 14px;
-            opacity: .5;
-        }
-    </style>
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.product-card:active {
+    transform: scale(0.97);
+    background: rgba(255,255,255,0.17);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* ------- FORM ------- */
+form {
+    width: 85%;
+    max-width: 400px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+}
+
+input, select {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+input::placeholder {
+    color: #eee;
+}
+
+/* ------- BUTTON ------- */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #25d366;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+button:active {
+    background: #1da851;
+    transform: scale(0.97);
+}
+
+/* ------- INSTAGRAM ICON ------- */
+.instagram {
+    margin-top: 30px;
+}
+
+.instagram img {
+    width: 50px;
+    transition: 0.2s;
+}
+
+.instagram img:active {
+    transform: scale(0.85);
+}
+
+/* ------- FOOTER ------- */
+footer {
+    margin-top: 40px;
+    opacity: 0.6;
+    font-size: 13px;
+}
+</style>
+
 </head>
-
 <body>
 
-    <header>
-        <h1>✨ LUXE PARFUMS</h1>
-        <p>عطور فاخرة – جودة عالية – روائح تدوم طويلا</p>
+<h1>LUXE PARFUMS ✨</h1>
+<p class="sub">عطور فاخرة – جودة عالية – توصيل لجميع المدن المغربية 🇲🇦</p>
 
-        <a class="btn" href="https://wa.me/212725607282" target="_blank">
-            تواصل عبر واتساب 📞
-        </a>
-    </header>
 
-    <div class="container">
-        <h2>أفضل العطور بأسعار مناسبة</h2>
-        <p>خدمة التوصيل لجميع المدن المغربية 🇲🇦</p>
-    </div>
+<!-- ------- PRODUCTS ------- -->
 
-    <footer>
-        © 2024 LUXE PARFUMS – All Rights Reserved
-    </footer>
+<div class="product-card">
+    <img src="https://via.placeholder.com/350x450" alt="product1">
+    <h3>Product 1</h3>
+</div>
+
+<div class="product-card">
+    <img src="https://via.placeholder.com/350x450" alt="product2">
+    <h3>Product 2</h3>
+</div>
+
+<div class="product-card">
+    <img src="https://via.placeholder.com/350x450" alt="product3">
+    <h3>Product 3</h3>
+</div>
+
+
+<!-- ------- ORDER FORM ------- -->
+
+<form id="orderForm">
+    <input type="text" id="name" placeholder="الاسم الكامل" required>
+    <input type="text" id="phone" placeholder="رقم الهاتف" required>
+    <input type="text" id="address" placeholder="العنوان" required>
+
+    <select id="product">
+        <option value="Product 1">Product 1</option>
+        <option value="Product 2">Product 2</option>
+        <option value="Product 3">Product 3</option>
+    </select>
+
+    <button type="button" onclick="sendToWhatsApp()">أطلب الآن عبر واتساب</button>
+</form>
+
+
+<!-- ------- INSTAGRAM ------- -->
+<div class="instagram">
+    <a href="https://www.instagram.com/luxe__parfumss?igsh=MWh3Y2Y3dngydDlydw%3D%3D&utm_source=qr" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+    </a>
+</div>
+
+
+<footer>
+    LUXE PARFUMS © 2024 – All Rights Reserved
+</footer>
+
+
+<!-- ------- WHATSAPP SCRIPT ------- -->
+<script>
+function sendToWhatsApp() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+    let product = document.getElementById("product").value;
+
+    let msg =
+        "طلب جديد:%0A" +
+        "الاسم: " + name + "%0A" +
+        "رقم الهاتف: " + phone + "%0A" +
+        "العنوان: " + address + "%0A" +
+        "المنتج: " + product;
+
+    window.open("https://wa.me/212725607282?text=" + msg, "_blank");
+}
+</script>
 
 </body>
 </html>
